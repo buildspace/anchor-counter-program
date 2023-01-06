@@ -21,7 +21,7 @@ describe("anchor-counter", () => {
       .rpc()
 
     const account = await program.account["counter"].fetch(counter.publicKey)
-    expect(account.count.toNumber() === 0)
+    expect(account.count.toNumber()).to.equal(0)
   })
 
   it("Incremented the count", async () => {
@@ -31,7 +31,7 @@ describe("anchor-counter", () => {
       .rpc()
 
     const account = await program.account["counter"].fetch(counter.publicKey)
-    expect(account.count.toNumber() === 1)
+    expect(account.count.toNumber()).to.equal(1)
   })
 
   it("Decremented the count", async () => {
@@ -41,6 +41,6 @@ describe("anchor-counter", () => {
       .rpc()
 
     const account = await program.account["counter"].fetch(counter.publicKey)
-    expect(account.count.toNumber() === 0)
+    expect(account.count.toNumber()).to.equal(0)
   })
 })
